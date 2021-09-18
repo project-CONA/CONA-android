@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cona_android.R
 
-class BottomDialogAdapter (val items:ArrayList<BottomDialogItem>): RecyclerView.Adapter<BottomDialogAdapter.viewHolder>() {
+class BottomDialogAdapter(val items: Array<BottomDialogItem>): RecyclerView.Adapter<BottomDialogAdapter.viewHolder>() {
     class viewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val name = itemView.findViewById<TextView>(R.id.Name)
         val address = itemView.findViewById<TextView>(R.id.address)
@@ -18,17 +18,12 @@ class BottomDialogAdapter (val items:ArrayList<BottomDialogItem>): RecyclerView.
 
     }
 
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): BottomDialogAdapter.viewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.review_card,parent,false)
         return viewHolder(view)
     }
 
-
-    override fun onBindViewHolder(holder: BottomDialogAdapter.viewHolder, position: Int) {
+    override fun onBindViewHolder(holder: viewHolder, position: Int) {
         holder.name.text = items.get(position).name
         holder.address.text = items.get(position).address
         //holder.imageView.setImageResource(items.get(position).imageView)
@@ -36,8 +31,12 @@ class BottomDialogAdapter (val items:ArrayList<BottomDialogItem>): RecyclerView.
     }
 
 
+
     override fun getItemCount(): Int {
         return items.size
     }
+
+
+
 
 }
