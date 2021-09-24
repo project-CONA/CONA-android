@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
 
     }
-    class MarkerEventListener(val context: Context, val fragmentManager:FragmentManager) : MapView.POIItemEventListener,FragmentActivity() {
+    class MarkerEventListener(val context: Context, val fragmentManager:FragmentManager) : MapView.POIItemEventListener {
         val binding by lazy {ActivityMainBinding.inflate(LayoutInflater.from(context))}
         override fun onPOIItemSelected(mapView: MapView?, poiItem: MapPOIItem?) {
             // 마커 클릭 시
             val items: Array<BottomDialogItem> = arrayOf(
-                BottomDialogItem("분식집","평내동","댓글")
+                BottomDialogItem("분식집","평내동",R.drawable.food_example,"댓글")
             )
             val adapter = BottomDialogAdapter(items)
 

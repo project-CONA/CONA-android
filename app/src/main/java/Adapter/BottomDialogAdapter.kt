@@ -26,7 +26,7 @@ class BottomDialogAdapter(val items: Array<BottomDialogItem>): RecyclerView.Adap
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         holder.name.text = items.get(position).name
         holder.address.text = items.get(position).address
-        //holder.imageView.setImageResource(items.get(position).imageView)
+        holder.imageView.setImageResource(items.get(position).imageView)
         holder.comment.text = items.get(position).comment
     }
 
